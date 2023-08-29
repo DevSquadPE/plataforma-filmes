@@ -24,4 +24,13 @@
 
 }
 
+/* Configuração para deixar a font com tamanho flexível */
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+}
+
 
