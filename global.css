@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@700&family=Open+Sans:wght@300;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --brand-color: #FFA634;
+    --dark-10: #121214;
+    --dark-20: #181818;
+    --dark-30: #A8A8A8;
+    --dark-40: #F9F9F9; 
+    --support-01: #2962FF;
+    --support-02: #0BB07B; 
+    --support-03: #FFCE52; 
+    --support-04: #F03D3D;
+    --support-05: #E0E0E0; 
+
+/* 
+    exemplo de uso: 
+    color: var(--dark-10); */
+
+}
+
+
