@@ -24,12 +24,15 @@
 
 }
 
-/* Configuração para deixar a font com tamanho flexível */
+/* Configuração para deixar os elementos com tamanho flexível */
 html {
     font-size: 62.5%;
 }
 
 body {
+    background-color: var(--dark-10);
+    color: var(--dark-40);
+    font-family: 'Open Sans', sans-serif;
     font-size: 1.6rem;
 }
 
