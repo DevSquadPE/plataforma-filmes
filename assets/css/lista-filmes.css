@@ -1,0 +1,7 @@
+body {
+    background-color: black;
+}
+
+.img-poster {
+    filter: grayscale(30%) brightness(80%)
+}
