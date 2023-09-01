@@ -1,7 +1,12 @@
 body {
-    background-color: black;
+    background-color: gray;
 }
 
 .img-poster {
-    filter: grayscale(30%) brightness(80%)
+    filter: grayscale(30%) brightness(60%)
+}
+
+.card-category {
+    background: var(--dark-10);
+    color: var(--brand-color);
 }
