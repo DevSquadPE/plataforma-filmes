@@ -1,10 +1,11 @@
 body {
     background-color: gray;
 }
+
 .card {
-  
- position: relative;
-  
+
+    position: relative;
+
 }
 
 
@@ -23,18 +24,53 @@ body {
 }
 
 .card-content {
-  position: absolute; 
-  right: auto; 
-  top: 65%;
-  padding: 25px; 
-  bottom: 0; 
-  text-align: justify;
+    position: absolute;
+    right: auto;
+    top: 65%;
+    padding: 25px;
+    bottom: 0;
+    text-align: justify;
 }
 
 .icon-star {
-margin: 15px 0px 14px 0px;
+    margin: 15px 0px 14px 0px;
 }
 
 .card-title {
-font-size: 24px;
+    font-size: 24px;
+}
+
+.card-slider {
+    display: flex;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+}
+
+.card-wrapper {
+    min-width: 320px;
+}
+
+.buttonPrevNext {
+    display: flex;
+    justify-content: space-between;
+}
+
+#prevBtn,
+#nextBtn {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.img-poster {
+    width: 300px;
+    height: 440px;
+}
+
+.container {
+    margin-top: 2rem;
+}
+
+.container:first-child {
+    margin-left: 1rem;
 }
