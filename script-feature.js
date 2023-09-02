@@ -1,2 +1,6 @@
-
-// >>>>>>> e240ddbae8454a60184583384456e60ff9c10417
+function StarsFromAPI() {
+    var rating = RatingFromAPI();
+    $(".icon-star").removeClass("active"); 
+    $(".icon-star[data-rating='" + rating + "']").prevAll().addBack().addClass("active");
+  }
+  
