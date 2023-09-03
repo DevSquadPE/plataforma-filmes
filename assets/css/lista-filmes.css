@@ -73,6 +73,10 @@ body {
 .buttonPrevNext {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    opacity: .4;
+    transition: opacity .15s ease;
+    
 }
 
 #prevBtn,
@@ -80,6 +84,7 @@ body {
     background: none;
     border: none;
     cursor: pointer;
+    padding: 10px 1px;
 }
 
 .img-poster {

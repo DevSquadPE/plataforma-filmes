@@ -4,3 +4,4 @@ function StarsFromAPI() {
     $(".icon-star[data-rating='" + rating + "']").prevAll().addBack().addClass("active");
   }
   
+  
