@@ -2,9 +2,14 @@
 #title, .content_populares{
     width: 155px;
     height: 44px;
-    margin-top: 678px;
-    margin-left: 48px;
     color: var(--dark-40);
+    
+}
+
+.content_populares{
+    font-size: 3rem;
+    margin-left: 1.5rem;
+    display: inline;
 }
 
 .linha {
@@ -12,14 +17,15 @@
     width: 61px;
     height: 3px; 
     background-color: var(--brand-color);
-    margin-left: 48px;
-    top: 728px;
-    border: 2px;
+    margin-left: 1.5rem;
+    /* top: 728px; */
+    /* border: 2px; */
 }
 
 
 body {
-    background-color: gray;
+    background-color: black;
+    margin-top: 678px;
 }
 
 .card {
@@ -29,8 +35,9 @@ body {
 }
 
 
+
 .img-poster {
-    filter: grayscale(30%) brightness(60%)
+    filter: grayscale(30%) brightness(60%);
 }
 
 .title-category {
@@ -64,28 +71,39 @@ body {
     display: flex;
     overflow: hidden;
     transition: transform 0.3s ease-in-out;
+
 }
 
 .card-wrapper {
     min-width: 320px;
 }
 
-.buttonPrevNext {
+.buttonPrev {
+position: relative;
+bottom: 28rem;
+left: 5px;
+
+}
+
+#containerButton {
+
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    opacity: .4;
-    transition: opacity .15s ease;
-    
+
 }
+
 
 #prevBtn,
 #nextBtn {
-    background: none;
+    color: var(--dark-30);
+    opacity: .2;
     border: none;
+    border-radius: 10px;
     cursor: pointer;
-    padding: 10px 1px;
+    padding: 32px 10px;
+
 }
+
 
 .img-poster {
     width: 300px;
