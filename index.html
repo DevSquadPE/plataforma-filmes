@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DevSquad Filmes</title>
     <link rel="stylesheet" href="assets/css/global.css" />
+    <script src="assets/js/modal.js" defer></script>
 </head>
 
 <body>
@@ -35,7 +36,8 @@
         </div>
 
     </header>
-
+    
+    <a href="#" data-toggle="modal">Modal</a>
 
 
     <main>
@@ -71,12 +73,12 @@
             <div class="modal-title">
                 <h5>Título filme</h5>
 
-                <button>X</button>
+                <button class="modal-close">X</button>
             </div>
 
             <div class="modal-body">
 
-                <video controls autoplay> 
+                <video controls> 
                     <source src="assets/videos/traffic.mp4" type="video/mp4" />
                     <p>Seu navegador não tem compatibilidade com reprodução de vídeos</p>
                 </video>
