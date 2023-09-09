@@ -4,6 +4,8 @@
 //     $(".icon-star[data-rating='" + rating + "']").prevAll().addBack().addClass("active");
 //   }
 
+// consumo API: 
+
 const API_KEY = "60231c33f3cd21e8fdceb8cf48a2e7fb";
 const IMAGE_URL = "https://image.tmdb.org/t/p/original";
 const URL = "https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&language=pt&sort_by=popularity.desc&include_adult=false"
@@ -28,3 +30,22 @@ cards.forEach((card) => {
   });
 });
 
+// slide função botão: 
+
+ const slide = [...document.querySelectorAll('.card-slider')];
+ const nextBtn = document.getElementById('nextBtn');
+ const prevBtn = document.getElementById('prevBtn'); 
+
+slide.forEach((item) => {
+  let containerDimensions = item.getBoundingClientRect();
+  let containerWidth = containerDimensions.width; 
+
+  nextBtn.addEventListener('click', () => {
+    item.scrollLeft += containerWidth;
+  })
+
+  prevBtn.addEventListener('click', () => {
+    item.scrollLeft -= containerWidth;
+  })
+
+})
