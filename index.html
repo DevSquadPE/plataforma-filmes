@@ -7,6 +7,7 @@
     <title>DevSquad Filmes</title>
     <link rel="stylesheet" href="assets/css/global.css" />
     <script src="assets/js/modal.js" defer></script>
+    <script src="assets/js/script.js" defer></script>
 </head>
 
 <body>
@@ -35,9 +36,9 @@
 
         </div>
 
+        <!-- Abre o modal do no modelo carousel maior -->
+        <a href="#" data-toggle="modal">Modal</a>
     </header>
-    
-    <a href="#" data-toggle="modal">Modal</a>
 
 
     <main>
@@ -65,26 +66,28 @@
 
 
 </body>
-    <!-- MODAL -->
-    <div class="modal">
+<!-- MODAL CAROUSEL MAIOR-->
+<div class="modal" id="bigger-carousel">
 
-        <div class="modal-content">
+    <div class="modal-content">
 
-            <div class="modal-title">
-                <h5>Título filme</h5>
+        <div class="modal-title">
+            <h5>Título filme</h5>
 
-                <button class="modal-close">X</button>
-            </div>
+            <button class="modal-close">X</button>
+        </div>
 
-            <div class="modal-body">
+        <div class="modal-body">
 
-                <video controls> 
-                    <source src="assets/videos/traffic.mp4" type="video/mp4" />
-                    <p>Seu navegador não tem compatibilidade com reprodução de vídeos</p>
-                </video>
-
-            </div>
+            <video controls>
+                <source src="" type="video/mp4" />
+                <!-- <source src="assets/videos/traffic.mp4" type="video/mp4" /> -->
+                <p>Seu navegador não tem compatibilidade com reprodução de vídeos</p>
+            </video>
 
         </div>
+
     </div>
+</div>
+
 </html>

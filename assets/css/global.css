@@ -118,9 +118,3 @@ a[data-toggle="modal"] {
     color: var(--brand-color);
 }   
 
-
-@media (max-width: 768px) {
-    .modal-body video {
-        height: auto;
-    }
-}
