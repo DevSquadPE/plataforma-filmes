@@ -1,5 +1,5 @@
 
-let modal = document.querySelector('.modal');
+const modal = document.querySelector('#bigger-carousel');
 
 // Abre o modal
 document.querySelector('[data-toggle="modal"]').addEventListener('click', () => {
@@ -19,6 +19,8 @@ document.querySelector('[data-toggle="modal"]').addEventListener('click', () => 
 document.querySelector('.modal-close').addEventListener('click', () => {
     
     modal.style.opacity = "0";
+
+    document.querySelector('video').pause() // Pausa o vídeo caso seja fechado em execução
 
     setTimeout(() => {
         modal.style.display = 'none';
