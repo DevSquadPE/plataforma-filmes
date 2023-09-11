@@ -1,4 +1,4 @@
-let openModal = document.querySelectorAll('.openModal');
+let openModal = document.querySelectorAll('[data-target="modal"]');
 
 openModal.forEach(open => {
 

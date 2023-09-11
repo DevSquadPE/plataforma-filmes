@@ -17,14 +17,13 @@ let movies = [
 movies.map((movie, index) => {
 
     listMovies.innerHTML += ` 
-        <div class="card-movie openModal" key="${index}" data-modal-target="smaller-modal">
+        <div class="card-movie" key="${index}" data-target="modal" data-modal-target="smaller-modal">
        
                 <h3> ${movie.title} </h3>             
                 <div> Lorem Ipsum </div>
             
         </div>
     `
-
 });
 
 
