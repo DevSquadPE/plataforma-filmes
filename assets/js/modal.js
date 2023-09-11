@@ -1,33 +1,43 @@
+let openModal = document.querySelectorAll('.openModal');
 
-const modal = document.querySelector('#bigger-carousel');
+openModal.forEach(open => {
 
-// Abre o modal
-document.querySelector('[data-toggle="modal"]').addEventListener('click', () => {
-    
-    modal.style.display = 'block';
-    
-    setTimeout(() => {
-        modal.style.opacity = "1";
-    }, 100)
+    open.addEventListener('click', e => {
 
-    document.querySelector('body').style.overflow = 'hidden';
-    
+        const currentOpenModal = e.currentTarget.getAttribute('data-modal-target');
+        const currentModal = document.querySelector(`#${currentOpenModal}`);
+
+        currentModal.style.display = 'block';
+
+        setTimeout(() => {
+            currentModal.style.opacity = "1";
+        }, 100)
+
+        document.querySelector('body').style.overflow = 'hidden';
+
+    });
+
 });
 
 
-// Fecha o modal
-document.querySelector('.modal-close').addEventListener('click', () => {
-    
-    modal.style.opacity = "0";
+let modalClose = document.querySelectorAll('.modal-close');
 
-    document.querySelector('video').pause() // Pausa o vídeo caso seja fechado em execução
+modalClose.forEach(close => {
 
-    setTimeout(() => {
-        modal.style.display = 'none';
-    }, 100)
-    
-    document.querySelector('body').style.overflow = 'auto';
+    close.addEventListener('click', e => {
+        const currentOpenModal = e.currentTarget.getAttribute('data-modal-target');
+        const currentModal = document.querySelector(`#${currentOpenModal}`);
+
+        currentModal.style.opacity = "0";
+
+        document.querySelector('video').pause() // Pausa o vídeo caso seja fechado em execução
+
+        setTimeout(() => {
+            currentModal.style.display = 'none';
+        }, 100)
+
+        document.querySelector('body').style.overflow = 'auto';
+
+    });
+
 });
-
-
-

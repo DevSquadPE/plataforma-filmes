@@ -17,20 +17,16 @@ let movies = [
 movies.map((movie, index) => {
 
     listMovies.innerHTML += ` 
-        <div class="card-movie" key="${index}">
+        <div class="card-movie openModal" key="${index}" data-modal-target="smaller-modal">
        
-       <h3> ${movie.title} </h3>
-        
-        <div> Lorem Ipsum </div>
-        
+                <h3> ${movie.title} </h3>             
+                <div> Lorem Ipsum </div>
+            
         </div>
     `
 
 });
 
-
-// Testando mudança de 'imagem '
-let header = document.querySelector('header a');
 
 
 let cardMovie = document.querySelectorAll('.card-movie');
@@ -44,14 +40,20 @@ cardMovie.forEach((e) => {
 
         // console.log(dadosFilme)
         
-        header.innerHTML = dadosFilme.title;
-
-        // Configurações modal
-        document.querySelector('.modal-title h5').innerHTML = dadosFilme.title
+        // FILMES DO CAROUSEL MAIOR -> MODAL MAIOR
+        document.querySelector('.modal-title h5').innerHTML = dadosFilme.title; 
         document.querySelector('.modal-body video source').setAttribute('src', dadosFilme.video);
-
         document.querySelector('.modal-body video').load();
+
+
+        // FILMES DO CAROUSEL MENOR -> MODAL MENOR
+        // document.getElementById('smaller-modal').style.display = 'block'; // Abre o modal menor
+        document.querySelector('.watch-movie-title').innerHTML = dadosFilme.title; 
+        document.querySelector('.modal-header video source').setAttribute('src', dadosFilme.video);
+
+        document.querySelector('.modal-header video').load();
 
     })
 })
+
 
