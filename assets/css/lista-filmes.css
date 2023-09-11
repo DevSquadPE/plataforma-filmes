@@ -18,14 +18,12 @@
     height: 3px; 
     background-color: var(--brand-color);
     margin-left: 1.5rem;
-    /* top: 728px; */
-    /* border: 2px; */
 }
 
 
 body {
     background-color: black;
-    margin-top: 678px;
+    margin-top: 400px;
 }
 
 .card {
