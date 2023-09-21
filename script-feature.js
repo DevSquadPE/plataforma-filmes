@@ -6,11 +6,18 @@ const IMAGE_URL = "https://image.tmdb.org/t/p/original";
 
 fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&language=pt-BR&sort_by=popularity.desc&include_adult=false&include_video=false`)
 .then(res => {
- return res.json()
+  if (!res.ok) {
+    throw new Error('Erro na solicitação da API');
+  }
+ return res.json();
 })
-.then(data => {
-  console.log(data);
+
+.then((data) => {
+  const filmes = data.results;
+  renderizarListaDeFilmes(filmes);
 })
+
+.catch((error) => console.error(error))
 
 
 // hover setas - cards populares:
