@@ -19,7 +19,6 @@ fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&language=p
 
 .catch((error) => console.error(error))
 
-
 // hover setas - cards populares:
 
 let cards = document.querySelectorAll('.container');
