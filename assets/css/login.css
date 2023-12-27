@@ -1,0 +1,149 @@
+@import url('global.css');
+
+main {
+    font-family: 'Mukta', sans-serif;
+    min-width: 100vw;
+    min-height: 100vh;
+    background-image: linear-gradient(to top, transparent 0%, #000 98%), url('../images/bg-login.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    padding-left: 3rem;
+}
+
+.logo {
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 6.648rem;
+}
+
+
+.gradient {
+    /* Primeiro passo: definir um degradê como fundo */
+    background-image: linear-gradient(to right, #FF267A, #FFA634);
+
+    /* Segundo passo: apagar do fundo tudo que não estiver imediatamente atrás de texto */
+    background-clip: text;
+    -webkit-background-clip: text;
+    /* Alguns navegadores precisam do prefixo */
+
+    /* Terceiro passo: apagar o texto, deixando apenas o fundo atrás dele */
+    -webkit-text-fill-color: transparent;
+
+    /* Cor que contraste com o degradê, caso o navegador não suporte `background-clip: text` */
+    color: black;
+}
+
+
+
+form#form-login {
+    width: max-content;
+    background-color: rgba(0, 0, 0, 0.6);
+    box-shadow: 0 0 .5rem var(--support-04), 0 0 .5rem var(--dark-40), 0 0 .5rem var(--support-04);
+    border-radius: 2rem;
+    padding: 4rem 2rem;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.input-group {
+    width: max-content;
+    margin: 0 auto 1rem;
+}
+
+label {
+    display: block;
+    margin-bottom: .5rem;
+}
+
+.input-group input {
+    width: 30rem;
+    color: var(--dark-10);
+    font-size: 1.6rem;
+    color: var(--support-04);
+    border: 0;
+    border-radius: .8rem;
+    outline: none;
+    padding: 1rem;
+
+    transition: all .5s ease-in-out;
+}
+
+.input-group input:focus {
+    background-image: linear-gradient(to right, #FF267A, #FFA634);
+    color: var(--dark-40);
+    font-weight: bold;
+}
+
+button {
+    width: 100%;
+    background-color: transparent;
+    color: var(--dark-40);
+    font-size: 1.6rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: .1rem solid var(--dark-40);
+    border-radius: .8rem;
+    margin-top: 1.4rem;
+    padding: 1rem;
+    cursor: pointer;
+
+    transition: all .5s ease-in-out;
+}
+
+div.answer {
+    text-align: center;
+}
+
+div.answer a {
+    color: var(--dark-40);
+    font-weight: bold;
+    border-radius: 1rem;
+    padding: .1rem .3rem;
+    transition: all .2s ease-in-out;
+}
+
+div.answer a:hover {
+    background-color: var(--dark-40);
+    color: var(--support-04);
+}
+
+button:hover {
+    background-image: linear-gradient(to right, #ff267a, #FFA634);
+    transform: scale(1.05);
+}
+
+
+/* Validações */
+div#error {
+    display: none;
+    opacity: 0;
+    background-color: rgba(255, 2, 57, 0.5);
+    text-align: center;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+    transition: all .2s ease-in-out;
+}
+
+input:invalid {
+    border: .2rem solid var(--support-04);
+    box-shadow: 0 0 .5rem var(--support-04);
+}
+
+input:valid {
+    border: .2rem solid var(--support-02);
+    box-shadow: 0 0 .5rem var(--support-02);
+}
