@@ -46,7 +46,7 @@ header {
 
 
 
-form#form-login {
+form#form-login, form#form-register {
     width: max-content;
     background-color: rgba(0, 0, 0, 0.6);
     box-shadow: 0 0 .5rem var(--support-04), 0 0 .5rem var(--dark-40), 0 0 .5rem var(--support-04);
@@ -128,7 +128,7 @@ button:hover {
 
 
 /* Validações */
-div#error {
+div.error {
     display: none;
     opacity: 0;
     background-color: rgba(255, 2, 57, 0.5);
@@ -147,3 +147,30 @@ input:valid {
     border: .2rem solid var(--support-02);
     box-shadow: 0 0 .5rem var(--support-02);
 }
+
+
+
+
+/* Modal */
+#modal {
+    width: 100vw;
+    background-image: linear-gradient(to right, rgba(255, 38, 122, 0.6), rgba(255, 166, 52, 0.8));
+   
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 99999;
+
+    opacity: 0;
+    transition: all .2s ease-in-out;
+}
+
+
+#modal form {
+    background-color: var(--dark-20);
+}
+
