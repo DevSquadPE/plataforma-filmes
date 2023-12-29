@@ -64,7 +64,8 @@ async function saveUserToLocalStorage(name, userEmail, password) {
 
     const registerUser = { nome: name, email: userEmail, senha: password };
     localStorage.setItem('users', JSON.stringify([...registeredUsers, registerUser]));
-    alert(`Olá, ${name}! Seu cadastro foi realizado com sucesso!`)
+    alert(`Olá, ${name}! Seu cadastro foi realizado com sucesso!\nRealize o login a seguir.`)
+    window.location.reload();
 };
 
 
