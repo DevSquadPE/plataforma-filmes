@@ -1,0 +1,127 @@
+
+#title, .content_populares{
+    width: 155px;
+    height: 44px;
+    color: var(--dark-40);
+    
+}
+
+.content_populares{
+    font-size: 3rem;
+    margin-left: 1.5rem;
+    display: inline;
+}
+
+.linha {
+    position:inherit;
+    width: 61px;
+    height: 3px; 
+    background-color: var(--brand-color);
+    margin-left: 1.5rem;
+}
+
+
+body {
+    background-color: black;
+    margin-top: 400px;
+}
+
+.card {
+
+    position: relative;
+
+}
+
+
+
+.img-poster {
+    filter: grayscale(30%) brightness(60%);
+}
+
+.title-category {
+    color: var(--brand-color);
+    padding: 4px 8px;
+    background: var(--dark-10);
+    display: inline;
+    text-align: center;
+    border-radius: 0px 8px;
+
+}
+
+.card-content {
+    position: absolute;
+    right: auto;
+    top: 65%;
+    padding: 25px;
+    bottom: 0;
+    text-align: justify;
+}
+
+.icon-star {
+    margin: 15px 0px 14px 0px;
+}
+
+.card-title {
+    font-size: 24px;
+}
+
+.card-slider {
+    display: flex;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+
+}
+
+.card-wrapper {
+    min-width: 320px;
+}
+
+.buttonPrev {
+position: relative;
+bottom: 28rem;
+left: 5px;
+
+}
+
+#containerButton {
+
+    display: flex;
+    justify-content: space-between;
+
+}
+
+
+#prevBtn,
+#nextBtn {
+    color: var(--dark-30);
+    opacity: .2;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 32px 10px;
+
+}
+
+
+.img-poster {
+    width: 300px;
+    height: 440px;
+
+}
+
+.container {
+    margin-top: 2rem;
+}
+
+.container:first-child {
+    margin-left: 1rem;
+}
+
+
+
+/* cards: 
+
+height: 261px;
+width: 174px;
+
+*/
