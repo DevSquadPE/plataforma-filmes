@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DevSquad Filmes</title>
+    <link rel="stylesheet" href="assets/css/login.css" />
+    <script src="./assets/js/login.js" defer></script>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo gradient">Kenai</div>
+    </header>
+
+    <main>
+
+        <form id="form-login">
+            <h1 class="gradient">Login</h1>
+
+            <div class="error"></div>
+
+            <div class="input-group">
+                <label for="email">E-mail:</label>
+                <input type="text" name="email" id="email" autofocus required />
+            </div>
+
+            <div class="input-group">
+                <label for="senha">Senha:</label>
+                <input type="password" name="senha" id="senha" maxlength="20" required />
+            </div>
+
+            <div class="answer">Não tem conta? <a href="#" id="btn-register">Cadastre-se</a></div>
+
+            <button type="submit">Entrar</button>
+
+        </form>
+
+    </main>
+
+</body>
+<!-- modal -->
+<div id="modal">
+    <form id="form-register">
+        <h1 class="gradient">Cadastre-se</h1>
+
+        <div class="input-group">
+            <label for="nome">Nome e Sobrenome:</label>
+            <input type="text" name="nome" id="nome" autofocus required />
+        </div>
+
+        <div class="input-group">
+            <label for="email">E-mail:</label>
+            <input type="text" name="email" id="email" required />
+        </div>
+
+        <div class="input-group">
+            <label for="senha">Senha:</label>
+            <input type="password" name="senha" id="senha" maxlength="20" required />
+        </div>
+
+        <div class="answer">Já tem conta? <a href="#" id="btn-login">Entrar</a></div>
+
+        <button type="submit">Cadastrar</button>
+
+    </form>
+</div>
+</html>
