@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        table {
+            width: 100%;
+            text-align: justify;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            border: .1rem solid #000;
+            padding: .5rem;
+        }
+
+        button {
+            padding: .5rem 1rem;
+            cursor: pointer;
+        }
+    </style>
+
+    <title>Perfil</title>
+</head>
+
+<body>
+
+    <main>
+        <h1>Usuário logado</h1>
+        <button>Sair</button>
+
+        <table>
+            <caption>Dados do usuário logado</caption>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Email</th>
+                    <th>Senha</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td id="nome"></td>
+                    <td id="email"></td>
+                    <td id="senha"></td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+
+
+    <script>
+
+        const { nome, email, senha } = JSON.parse(localStorage.getItem('loggedUser'));
+
+        document.querySelector('#nome').innerText = nome;
+        document.querySelector('#email').innerText = email;
+        document.querySelector('#senha').innerText = senha;
+
+        document.querySelector('button').addEventListener('click', () => {
+            window.location = `${window.location.origin}/index.html`;
+
+            localStorage.removeItem('loggedUser');
+        });
+
+    </script>
+</body>
+
+</html>
