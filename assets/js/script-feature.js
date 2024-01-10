@@ -16,9 +16,10 @@ try {
       let slider = document.querySelector(".card-slider"); // engloba todos os sliders
       slider.innerHTML = "";
       data.results.forEach(filme => {
+        console.log(filme)
         slider.innerHTML += `
           <div class="card-wrapper">     
-              <article class="card" data-target="modal" data-modal-target="smaller-modal">
+              <article class="card" data-target="modal" data-modal-target="smaller-modal" key="${filme.id}">
               
                   <img class="img-poster" src="https://image.tmdb.org/t/p/original/${filme.poster_path}" alt="${filme.title}" />
                   
