@@ -27,9 +27,8 @@ body {
 }
 
 .card {
-
     position: relative;
-
+    cursor: pointer;
 }
 
 
