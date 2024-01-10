@@ -5,9 +5,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>DevSquad Filmes</title>
+  <!-- styles -->
   <link rel="stylesheet" href="../assets/css/global.css" />
   <link rel="stylesheet" href="../assets/css/lista-filmes.css" />
   <link rel="stylesheet" href="../assets/css/top-carousel.css" />
+  <link rel="stylesheet" href="../assets/css/modals.css" />
+  <!-- scripts -->
+  <script src="../assets/js/script-feature.js" defer></script>
+<script src="../assets/js/top-carousel.js" defer></script>
+<script src="../assets/js/modals.js" defer></script>
 </head>
 
 <body>
@@ -53,19 +59,19 @@
   <div id="carousel-items">
 
     <div class="carousel-item">Carousel 1
-      <button class="openModal" data-modal-target="bigger-modal">Abrir modal</button>
+      <button class="openModal" data-modal-target="bigger-modal" style="z-index: 999;">Abrir modal</button>
     </div>
     <div class="carousel-item">Carousel 2
-      <button class="openModal" data-modal-target="bigger-modal">Abrir modal</button>
+      <button class="openModal" data-modal-target="bigger-modal" style="z-index: 999;">Abrir modal</button>
     </div>
     <div class="carousel-item">Carousel 3
-      <button class="openModal" data-modal-target="bigger-modal">Abrir modal</button>
+      <button class="openModal" data-modal-target="bigger-modal" style="z-index: 999;">Abrir modal</button>
     </div>
     <div class="carousel-item">Carousel 4
-      <button class="openModal" data-modal-target="bigger-modal">Abrir modal</button>
+      <button class="openModal" data-modal-target="bigger-modal" style="z-index: 999;">Abrir modal</button>
     </div>
     <div class="carousel-item">Carousel 5
-      <button class="openModal" data-modal-target="bigger-modal">Abrir modal</button>
+      <button class="openModal" data-modal-target="bigger-modal" style="z-index: 999;">Abrir modal</button>
     </div>
 
   </div>
@@ -121,8 +127,83 @@
 
 </footer>
 
-<script src="../assets/js/script-feature.js"></script>
-<script src="../assets/js/top-carousel.js"></script>
+
 </body>
+
+<!-- MODAL CAROUSEL MAIOR-->
+<div class="modal" id="bigger-modal">
+
+  <div class="modal-content">
+
+      <div class="modal-title">
+          <h5>Título filme</h5>
+
+          <button class="modal-close" data-modal-target="bigger-modal">X</button>
+      </div>
+
+      <div class="modal-body">
+
+          <video controls>
+              <source src="" type="video/mp4" />
+              <p>Seu navegador não tem compatibilidade com reprodução de vídeos</p>
+          </video>
+
+      </div>
+
+  </div>
+</div>
+
+
+
+<!-- MODAL CAROUSEL MENOR-->
+<div class="modal" id="smaller-modal">
+
+  <div class="modal-content">
+
+      <div class="modal-header">
+
+          <video autoplay muted loop>
+              <source src="" type="video/mp4" />
+              <p>Seu navegador não tem compatibilidade com reprodução de vídeos</p>
+          </video>
+
+          <button class="modal-close" data-modal-target="smaller-modal">X</button>
+
+          <div class="watch-movie">
+
+              <h3 class="watch-movie-title">Título filme</h3>
+
+              <a href="#" class="watch-movie-btn">&#9654; Assistir</a>
+          </div>
+
+      </div>
+
+
+      <div class="modal-body">
+
+          <div class="movie-details">
+             
+              <div class="movie-details-left">
+                  <div> Lorem ipsum </div>
+                  <div>...</div>
+                  <div>...</div>
+                  <div>...</div>
+                  <div>...</div>
+              </div>
+
+              <div class="movie-details-right">
+                  <div> Lorem ipsum </div>
+                  <div>...</div>
+                  <div>...</div>
+                  <div>...</div>
+                  <div>...</div>
+              </div>
+              
+          </div>
+
+      </div>
+      
+  </div>
+</div>
 
 </html>
