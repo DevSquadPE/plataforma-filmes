@@ -1,3 +1,4 @@
+
 // consumo API: 
 const API_KEY = "60231c33f3cd21e8fdceb8cf48a2e7fb";
 const IMAGE_URL = "https://image.tmdb.org/t/p/original";
@@ -16,7 +17,6 @@ try {
       let slider = document.querySelector(".card-slider"); // engloba todos os sliders
       slider.innerHTML = "";
       data.results.forEach(filme => {
-        console.log(filme)
         slider.innerHTML += `
           <div class="card-wrapper">     
               <article class="card" data-target="modal" data-modal-target="smaller-modal" key="${filme.id}">
@@ -43,6 +43,7 @@ try {
 
 
 // hover setas - cards populares:
+
 let cards = document.querySelectorAll('.container');
 let buttons = document.querySelectorAll('.buttonPrev');
 
@@ -60,22 +61,41 @@ cards.forEach((card) => {
   });
 });
 
-
 // slide função botão: 
-const slide = [...document.querySelectorAll('.card-slider')];
-const nextBtn = document.getElementById('nextBtn');
-const prevBtn = document.getElementById('prevBtn');
 
-slide.forEach((item) => {
-  let containerDimensions = item.getBoundingClientRect();
-  let containerWidth = containerDimensions.width;
+document.addEventListener('DOMContentLoaded', function() {
+  const slider = document.querySelector('.card-slider');
+  const nextBtn = document.getElementById('nextBtn');
+  const prevBtn = document.getElementById('prevBtn');
+  let isAnimating = false;
 
   nextBtn.addEventListener('click', () => {
-    item.scrollLeft += containerWidth;
-  });
-  
-  prevBtn.addEventListener('click', () => {
-    item.scrollLeft -= containerWidth;
+    const cardWrapper = slider.querySelector('.card-wrapper');
+    const cardWidth = cardWrapper.offsetWidth;
+
+    if (!isAnimating && slider.scrollLeft + slider.clientWidth < slider.scrollWidth) {
+      isAnimating = true;
+      slider.scrollBy({
+        left: cardWidth,
+        behavior: 'smooth'
+      });
+    }
   });
 
+  prevBtn.addEventListener('click', () => {
+    const cardWrapper = slider.querySelector('.card-wrapper');
+    const cardWidth = cardWrapper.offsetWidth;
+
+    if (!isAnimating && slider.scrollLeft > 0) {
+      isAnimating = true;
+      slider.scrollBy({
+        left: -cardWidth,
+        behavior: 'smooth'
+      });
+    }
+  });
+
+  slider.addEventListener('scroll', () => {
+    isAnimating = false;
+  });
 });
