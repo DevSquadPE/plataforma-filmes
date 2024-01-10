@@ -7,7 +7,7 @@
 }
 
 .content_populares{
-    font-size: 3rem;
+    font-size: 2rem;
     margin-left: 1.5rem;
     display: inline;
 }
@@ -23,6 +23,8 @@
 
 .card {
     position: relative;
+    cursor: pointer;
+    width: 160px;
 }
 
 
@@ -38,6 +40,7 @@
     display: inline;
     text-align: center;
     border-radius: 0px 8px;
+    font-size: 12px;
 
 }
 
@@ -45,7 +48,7 @@
     position: absolute;
     right: auto;
     top: 65%;
-    padding: 25px;
+    padding-left: 4px;
     bottom: 0;
     text-align: justify;
 }
@@ -55,23 +58,22 @@
 }
 
 .card-title {
-    font-size: 24px;
+    font-size: 12px;
+    margin-top: 5px;
+    text-align: center;
 }
 
 .card-slider {
     display: flex;
     overflow: hidden;
-    transition: transform 0.3s ease-in-out;
+    width: 100%;
 
 }
 
-.card-wrapper {
-    min-width: 320px;
-}
 
 .buttonPrev {
 position: relative;
-bottom: 28rem;
+bottom: 17rem;
 left: 5px;
 
 }
@@ -91,14 +93,14 @@ left: 5px;
     border: none;
     border-radius: 10px;
     cursor: pointer;
-    padding: 32px 10px;
+    padding: 22px 10px;
 
 }
 
 
 .img-poster {
-    width: 300px;
-    height: 440px;
+    width: 160px;
+    height: 240px;
 
 }
 
@@ -110,7 +112,11 @@ left: 5px;
     margin-left: 1rem;
 }
 
-
+@media (max-width: 600px) {
+    .container {
+       width: 95%;
+    }
+}
 
 /* cards: 
 

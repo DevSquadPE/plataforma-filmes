@@ -1,68 +1,45 @@
 
 // consumo API: 
-
 const API_KEY = "60231c33f3cd21e8fdceb8cf48a2e7fb";
 const IMAGE_URL = "https://image.tmdb.org/t/p/original";
 
-
-
-
 try {
-  fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&language=pt-BR&sort_by=popularity.desc&include_adult=false&include_video=false`)
-.then(res => {
-  if (!res.ok) {
-    throw new Error('Erro na solicitação da API');
-  }
- return res.json();
-})
+  fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&language=pt-BR&sort_by=popularity.desc&include_adult=false&include_video=true`)
+    .then(res => {
+      if (!res.ok) {
+        throw new Error('Erro na solicitação da API');
+      }
+      return res.json();
+    })
 
-.then((data) => {
-  data.results.forEach(filme => {
-    var cardWrapper = document.createElement("div");
-cardWrapper.className = "card-wrapper";
-var slider = document.querySelector(".card-slider");
+    .then((data) => {
 
-var cardArticle = document.createElement("article");
-cardArticle.className = "card";
-var img = document.createElement("img");
-img.className = "img-poster";
-img.src = `https://image.tmdb.org/t/p/original/${filme.poster_path}`
+      let slider = document.querySelector(".card-slider"); // engloba todos os sliders
+      slider.innerHTML = "";
+      data.results.forEach(filme => {
+        slider.innerHTML += `
+          <div class="card-wrapper">     
+              <article class="card" data-target="modal" data-modal-target="smaller-modal" key="${filme.id}">
+              
+                  <img class="img-poster" src="https://image.tmdb.org/t/p/original/${filme.poster_path}" alt="${filme.title}" />
+                  
+                  <div class="card-content">
+                      <div class="card-category">
+                          <p class="title-category">${filme.vote_average + '★'}</p>
+                          <h3 class="card-title">${filme.title}</h3>
+                      </div>
+                  </div>
+              
+                </article>   
+          </div>
+        `;
+      });
 
-var content = document.createElement("div");
-content.className = "card-content";
-
-var category = document.createElement("div")
-category.className = "card-category";
-
-var star = "★";
-
-var titleCategory = document.createElement("p");
-titleCategory.className = ("title-category"); 
-titleCategory.textContent = filme.vote_average + star;
-
-var titleCard = document.createElement("h3");
-titleCard.className = "card-title";
-titleCard.textContent = filme.title; 
-
-cardWrapper.appendChild(cardArticle);
-slider.appendChild(cardWrapper);
-content.appendChild(category);
-content.appendChild(titleCard);
-category.appendChild(titleCategory);
-category.appendChild(titleCard);
-cardArticle.appendChild(img);
-cardArticle.appendChild(content);
-
-  })
-
-}) 
+    });
 
 } catch (error) {
   console.error(error);
-}
-
-//Cards - criação de divs
-
+};
 
 
 // hover setas - cards populares:
@@ -86,20 +63,39 @@ cards.forEach((card) => {
 
 // slide função botão: 
 
- const slide = [...document.querySelectorAll('.card-slider')];
- const nextBtn = document.getElementById('nextBtn');
- const prevBtn = document.getElementById('prevBtn'); 
-
-slide.forEach((item) => {
-  let containerDimensions = item.getBoundingClientRect();
-  let containerWidth = containerDimensions.width; 
+document.addEventListener('DOMContentLoaded', function() {
+  const slider = document.querySelector('.card-slider');
+  const nextBtn = document.getElementById('nextBtn');
+  const prevBtn = document.getElementById('prevBtn');
+  let isAnimating = false;
 
   nextBtn.addEventListener('click', () => {
-    item.scrollLeft += containerWidth;
-  })
+    const cardWrapper = slider.querySelector('.card-wrapper');
+    const cardWidth = cardWrapper.offsetWidth;
+
+    if (!isAnimating && slider.scrollLeft + slider.clientWidth < slider.scrollWidth) {
+      isAnimating = true;
+      slider.scrollBy({
+        left: cardWidth,
+        behavior: 'smooth'
+      });
+    }
+  });
 
   prevBtn.addEventListener('click', () => {
-    item.scrollLeft -= containerWidth;
-  })
+    const cardWrapper = slider.querySelector('.card-wrapper');
+    const cardWidth = cardWrapper.offsetWidth;
 
-})
+    if (!isAnimating && slider.scrollLeft > 0) {
+      isAnimating = true;
+      slider.scrollBy({
+        left: -cardWidth,
+        behavior: 'smooth'
+      });
+    }
+  });
+
+  slider.addEventListener('scroll', () => {
+    isAnimating = false;
+  });
+});
