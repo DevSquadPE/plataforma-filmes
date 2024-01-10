@@ -83,7 +83,7 @@ async function login(userEmail, password) {
 
         if (senha === password) {
             localStorage.setItem('loggedUser', JSON.stringify(userFound)); // salva o usuário logado
-            // window.location = `${window.location.origin}/pages/profile.html`; // para uso local
+            // window.location = `${window.location.origin}/pages/home.html`; // para uso local
             window.location = `${window.location.origin}/plataforma-filmes/pages/home.html`; // uso github
         } else {
             errorEl.innerText = 'Senha inválida!';
