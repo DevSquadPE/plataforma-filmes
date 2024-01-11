@@ -11,33 +11,119 @@
 
 /* ÁREA QUE ENGLOBA TODAS AS DIVS COM AS IMAGENS */
 #carousel-items {
-    background-color: transparent;
+    height: inherit;
 
     /* Deixa os sliders lado a lado */
     display: flex;
     flex: 1;
-    width: 100%;
-    /* height: 40rem; */
-    height: inherit;
 
-    transition: all ease .3s;
+    transition: all .3s ease;
 }
 
 
 #carousel-items .carousel-item {
     width: 100vw;
-
     /* HERDA altura de #carousel-items */
-    height: inherit;    
+    height: inherit;
 
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
 
     /* Alinha texto ao centro */
+    display: flex;
+    justify-content: left;
+    align-items: center;
+
+    color: var(--dark-40);
+}
+
+/* Title, descrição e btn para ver o trailler */
+.movie-details {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(18, 18, 20, .8);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem;
+    border-radius: 0 2rem 2rem 0;
+}
+
+
+/* Alteração no formato e cor da scrollbar */
+.movie-details p::-webkit-scrollbar {
+    /* Largura da barra de rolagem vertical */
+    width: 1.2rem;
+    /* Altura da barra de rolagem horizontal */
+    height: 1.2rem;
+}
+
+.movie-details p::-webkit-scrollbar-thumb {
+    background-color: var(--support-01);
+    /* Cor da barra de rolagem */
+    border-radius: .6rem;
+    /* Raio da borda da barra de rolagem */
+}
+
+
+.movie-details h1,
+.movie-details p {
+    max-width: 50vw;
+    margin-bottom: 1.6rem;
+}
+
+.movie-details h1 {
+    color: var(--dark-40);
+    font-size: 3.5rem;
+    font-weight: 600;
+    line-height: 4rem;
+}
+
+.movie-details p {
+    width: 53.6rem;
+    height: 8.4rem;
+    font-size: 1.6rem;
+    text-align: justify;
+    line-height: 2.8rem;
+    overflow-y: auto;
+    padding-right: 2rem;
+    z-index: 999;
+    transition: all .2s ease-in-out;
+}
+
+.movie-details p:hover {
+    background-color: rgba(18, 18, 20, .5);
+    transform: scale(1.02);
+    border-radius: 1rem;
+    padding: 0 2rem;
+    user-select: none;
+}
+
+
+.btn {
+    background-color: var(--brand-color);
+    width: 25rem;
+    height: 5.6rem;
+
     display: flex;
     justify-content: center;
     align-items: center;
 
-    font-size: 5rem;
-    color: #aaa;
+    color: #181818;
+    font-size: 2.4rem;
+    font-weight: bold;
+    text-decoration: none;
+
+    border-radius: 0.4rem;
+    margin-top: 2rem;
+    cursor: pointer;
+    z-index: 999;
+    transition: all .2s ease-in-out;
+}
+
+.btn:hover {
+    transform: scale(1.05);
 }
 
 
@@ -45,13 +131,13 @@
 /* CONTROLA OS SLIDERS */
 #carousel-controls {
     position: absolute;
-    z-index: 99;
     width: 100%;
 
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 2rem;
+    padding: 0 1rem;
+    z-index: 99;
 }
 
 
@@ -64,14 +150,15 @@
     display: none;
 
     text-align: center;
-    font-size: 3rem;
-    line-height: 50px;
+    font-size: 2rem;
+    line-height: 5rem;
 
     font-weight: bold;
 
-    background-color: var(--brand-color);
-    color: var(--dark-10);
+    background-color: rgba(41, 98, 255, .6);
+    color: var(--dark-40);
     border-radius: 50%;
+    border: .1rem solid #fff;
 
     overflow: hidden;
     cursor: pointer;
@@ -83,4 +170,38 @@
 /* Exibe o passador de sliders apenas quando o mouse estiver sobre o carousel */
 #carousel-controls:hover .carousel-control {
     display: block;
+}
+
+@media (max-width: 768px) {
+    .movie-details h1 {
+        font-size: 2.5rem;
+
+    }
+
+    .movie-details p {
+        font-size: 1.6rem;
+        margin-top: 1rem;
+    }
+
+    .btn {
+        width: 50vw;
+        height: 4rem;
+        font-size: 2rem;
+    }
+
+    #carousel-controls {
+        padding: 0 .5rem;
+    }
+
+
+    .carousel-control {
+        width: 3rem;
+        height: 3rem;
+
+        font-size: 1.6rem;
+        line-height: 3rem;
+    }
+
+
+
 }
