@@ -30,11 +30,10 @@ html {
 }
 
 body {
+    max-width: 100vw;
     background-color: var(--dark-10);
     color: var(--dark-40);
     font-family: 'Open Sans', sans-serif;
     font-size: 1.6rem;
-    font-family: 'Open Sans', sans-serif;
-    color: var(--dark-40)
 }
 
