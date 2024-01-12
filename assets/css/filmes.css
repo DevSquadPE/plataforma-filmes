@@ -1,59 +1,85 @@
 body {
-  background: var(--dark-10);
-  padding: 48px;
+  padding: 4.8rem;
 }
 
 .container {
   color: var(--dark-40);
+  position: relative;
   font-family: Open Sans, sans-serif;
 }
 
+.container + .container {
+  margin-top: 6rem;
+}
+
 .container h1 {
-  margin-bottom: 20px;
   font-size: 56px;
   font-weight: 600;
   line-height: 64px;
   letter-spacing: 0em;
   text-align: left;
-}
-
-.movie-slider {
-  width: 100%;
-  overflow-x: hidden;
-}
-
-.movie-wrapper {
-  height: 500px;
+  text-align: left;
   position: relative;
+  margin-bottom: 40px;
 }
 
-.movies-container {
+.container h1::after {
+  content: " ";
+  width: 6rem;
+  border-bottom: 5px solid var(--brand-color);
   position: absolute;
-  height: 440px;
-  margin-left: -1px;
+  bottom: -15px;
+  left: 0px;
+}
+
+.container button {
+  z-index: 5;
+  position: absolute;
+  border: none;
+  background: none;
+  border-radius: 0.2rem;
+  padding: 3rem 1rem;
+  top: calc(50%);
+  cursor: pointer;
+}
+
+.container button:hover {
+  background: #ffffff50;
+}
+
+.container button svg {
+  height: 4rem;
+  fill: var(--brand-color);
+}
+
+.movies-slider {
+  overflow: hidden;
+}
+.nextBtn {
+  right: 0;
+}
+
+.movies-wrapper {
   display: flex;
-  gap: 20px;
-  transition: ease-in-out 1s all;
-  -moz-transition: ease-in-out 1s all;
-  -wbekit-transition: ease-in-out 1s all;
+  gap: 2rem;
 }
 
 .movie-card {
   user-select: none;
-  pointer-events: none;
-  padding: 24px;
-  width: 300px;
-  height: 440px;
+  cursor: pointer;
+  padding: 2.4rem;
+  min-width: 30rem;
+  height: 44rem;
   display: flex;
-  flex-direction: column-reverse;
-  gap: 15px;
+  flex-direction: column;
+  gap: 1.5rem;
   align-items: start;
-  justify-content: flex-start;
+  justify-content: flex-end;
   background-size: cover;
   border-radius: 5px;
-  box-shadow: inset 0px -100px 100px 30px black;
-  -moz-box-shadow: inset 0px -100px 100px 30px black;
   -webkit-box-shadow: inset 0px -100px 100px 30px black;
+  -moz-box-shadow: inset 0px -100px 100px 30px black;
+  box-shadow: inset 0px -100px 100px 30px black;
 }
 
 .movie-card .movie-rating {
@@ -71,14 +97,14 @@ body {
 }
 
 .unfilled {
-  background-image: url("../RatingUnfilled.png");
+  background-image: url("../img/RatingUnfilled.png");
 }
 .filled {
-  background-image: url("../RatingFilled.png");
+  background-image: url("../img/RatingFilled.png");
 }
 
 .movie-card .movie-title {
-  font-size: 24px;
-  font-weight: 800px;
-  line-height: 32.68px;
+  font-size: 2.4rem;
+  font-weight: 80rem;
+  line-height: 3.2rem;
 }
